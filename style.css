@@ -1,0 +1,451 @@
+/*
+Theme Name: Johannes
+Text Domain: johannes
+Version: 1.0
+Requires at least: 5.3
+Description: A test theme using the new WordPress block templating system.
+Author: Mel Choyce
+Author URI: https://melchoyce.design/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+
+
+html,
+body {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+
+
+html {
+	font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+	background: white;
+	box-sizing: border-box;
+	color: #000;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.8rem;
+	text-align: left;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	-webkit-font-smoothing: antialiased;
+	word-break: break-word;
+	word-wrap: break-word;
+}
+
+#site-content {
+	overflow: hidden;
+}
+
+
+/* Clearing ---------------------------------- */
+
+.group::after,
+.entry-content::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+
+/* Base Transitions -------------------------- */
+
+a,
+path {
+	transition: all 0.15s linear;
+}
+
+
+/* Accessibility Settings -------------------- */
+
+@media ( prefers-reduced-motion: reduce ) {
+
+	* {
+		animation-duration: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	2. Element Base
+/* ---------------------------------------------*---------------------------- */
+
+
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 3.5rem 0 2rem;
+}
+
+h1,
+.heading-size-1 {
+	font-size: 3.6rem;
+	font-weight: 800;
+}
+
+h2,
+.heading-size-2 {
+	font-size: 3.2rem;
+}
+
+h3,
+.heading-size-3 {
+	font-size: 2.8rem;
+}
+
+h4,
+.heading-size-4 {
+	font-size: 2.4rem;
+}
+
+h5,
+.heading-size-5 {
+	font-size: 2.1rem;
+}
+
+h6,
+.heading-size-6 {
+	font-size: 1.6rem;
+	letter-spacing: 0.03125em;
+	text-transform: uppercase;
+}
+
+p {
+	line-height: 1.5;
+	margin: 0 0 1em 0;
+}
+
+em,
+i,
+q,
+dfn {
+	font-style: italic;
+}
+
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+	font-weight: bolder;
+}
+
+big {
+	font-size: 1.2em;
+}
+
+small {
+	font-size: 0.75em;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+abbr,
+acronym {
+	cursor: help;
+}
+
+address {
+	line-height: 1.5;
+	margin: 0 0 2rem 0;
+}
+
+hr {
+	border-style: solid;
+	border-width: 0.1rem 0 0 0;
+	border-color: #eee;
+	margin: 4rem 0;
+}
+
+a {
+	color: #59BACC;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+
+/* Lists ------------------------------------- */
+
+
+
+
+/* Quotes ------------------------------------ */
+
+blockquote {
+
+}
+
+cite {
+
+}
+
+blockquote cite {
+
+}
+
+blockquote p:last-child {
+	margin: 0;
+}
+
+
+/* Code -------------------------------------- */
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace;
+	font-size: 0.9em;
+	padding: 0.4rem 0.6rem;
+}
+
+code,
+kbd,
+samp {
+	background: rgba(0, 0, 0, 0.075);
+	border-radius: 0.2rem;
+}
+
+pre {
+	border: 0.1rem solid #eee;
+	line-height: 1.5;
+	margin: 4rem 0;
+	overflow: auto;
+	padding: 3rem 2rem;
+	text-align: left;
+}
+
+pre code {
+	background: transparent;
+	padding: 0;
+}
+
+
+/* Media ------------------------------------- */
+
+figure {
+	display: block;
+	margin: 0;
+}
+
+iframe {
+	display: block;
+	max-width: 100%;
+}
+
+video {
+	display: block;
+}
+
+svg,
+img,
+embed,
+object {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+figcaption,
+.wp-caption-text {
+	color: #666;
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-top: 1.5rem;
+}
+
+figcaption a,
+.wp-caption-text a {
+	color: inherit;
+}
+
+
+/* GALLERIES */
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 3em 0 3em -0.8em;
+	width: calc(100% + 1.6em);
+}
+
+.gallery-item {
+	margin: 0.8em 0;
+	padding: 0 0.8em;
+	width: 100%;
+}
+
+.gallery-caption {
+	display: block;
+	margin-top: 0.8em;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	3. Layout
+/* ---------------------------------------------*---------------------------- */
+
+.alignwide {
+	margin: auto;
+	max-width: 1000px;
+}
+
+
+/* Header ------------------------------------- */
+
+
+.site-header {
+	background: white;
+	border: 1px solid rgba(0,0,0,.1);
+}
+
+.site-header .wp-block-columns {
+	margin-bottom: 0;
+}
+
+.site-header h1 {
+	margin: 3rem 0;
+}
+
+.site-header .wp-block-social-links {
+	justify-content: flex-end;
+}
+
+
+/* Content ------------------------------------- */
+
+
+.site-content {
+	margin: 4rem auto 0;
+}
+
+.entry-content > .alignfull {
+	margin-top: -4rem;
+}
+
+
+/* Footer ------------------------------------- */
+
+
+.site-footer {
+	padding: 3rem;
+	background-color: #fafafa;
+}
+
+.site-footer .wp-block-group {
+	margin-bottom: 3rem;
+}
